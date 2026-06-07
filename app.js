@@ -173,8 +173,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const match = photo.match(/photo_(\d+)_/);
       const photoNum = match ? parseInt(match[1], 10) : 0;
       
-      const isNature = naturePhotoNumbers.includes(photoNum);
-      const category = isNature ? 'nature' : 'chan';
+      // Categorize photos based on actual content
+      let category = 'chan';
+      // Nature/scenery photos, including mountain landscapes (40-50) and wood sculptures (51-60)
+      if ((photoNum >= 4 && photoNum <= 9) || 
+          (photoNum >= 13 && photoNum <= 20) || 
+          (photoNum >= 38 && photoNum <= 50) || 
+          (photoNum >= 51 && photoNum <= 60)) {
+        category = 'nature';
+      }
       
       let title = 'Теплий Берег';
       let subtitle = 'Чан та відпочинок';
@@ -241,8 +248,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   let currentFilter = 'all';
-  let itemsToShow = 8;
-  const itemsPerLoad = 8;
+  let itemsToShow = 16;
+  const itemsPerLoad = 12;
   let filteredItems = [];
 
   function filterMedia() {
