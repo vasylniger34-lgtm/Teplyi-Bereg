@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   L.marker(coordinates, { icon: customIcon }).addTo(map)
-    .bindPopup(`<strong style="color:#080d0a;">Чан «У Василя»</strong><br><span style="color:#333;">с. Бистриця-Гірська</span>`, {
+    .bindPopup(`<strong style="color:#080d0a;">Комплекс «Теплий Берег»</strong><br><span style="color:#333;">с. Бистриця-Гірська</span>`, {
       closeButton: false,
       offset: L.point(0, -10)
     })
@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (item.type === 'video') {
       lightboxMediaContainer.innerHTML = `
-        <video src="${item.src}" controls autoplay loop playsinline style="max-height:80vh; width:100%;"></video>
+        <video src="${item.src}" controls autoplay loop playsinline webkit-playsinline style="max-height:80vh; width:100%;"></video>
       `;
     } else {
       lightboxMediaContainer.innerHTML = `
@@ -425,69 +425,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ==========================================
-  // 6. Interactive Pricing Calculator
-  // ==========================================
-  const hoursSelect = document.getElementById('hours-select');
-  const peopleSelect = document.getElementById('people-select');
-  const priceDisplay = document.getElementById('calc-price-display');
-  const bookingForm = document.getElementById('calc-booking-form');
-
-  function calculatePrice() {
-    const hours = parseInt(hoursSelect.value, 10);
-    const people = parseInt(peopleSelect.value, 10);
-    
-    // Base pricing system
-    // Minimal booking is 2 hours for 2000 UAH
-    let price = 2000;
-    
-    // Each additional hour adds 500 UAH
-    if (hours > 2) {
-      price += (hours - 2) * 500;
-    }
-    
-    // Surcharge based on group size
-    if (people === 6) {
-      price += 200;
-    } else if (people === 8) {
-      price += 400;
-    }
-    
-    priceDisplay.textContent = `${price} ₴`;
-    return price;
-  }
-
-  hoursSelect.addEventListener('change', calculatePrice);
-  peopleSelect.addEventListener('change', calculatePrice);
-
-  // Form submission: redirect to Messenger booking with pre-filled message
-  bookingForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const hours = hoursSelect.value;
-    const peopleText = peopleSelect.options[peopleSelect.selectedIndex].text;
-    const estimatedPrice = priceDisplay.textContent;
-    
-    const baseMessage = `Доброго дня! Бажаю забронювати відпочинок у комплексі «Теплий Берег» (село Бистриця-Гірська). 
-Деталі замовлення:
-- Час парення: ${hours} год.
-- Кількість гостей: ${peopleText}
-- Очікувана вартість: ${estimatedPrice}
-
-Будь ласка, зв'яжіться зі мною для підтвердження бронювання та узгодження вільного часу.`;
-
-    const encodedMessage = encodeURIComponent(baseMessage);
-    
-    // Redirect to Telegram with pre-filled text as fallback or main trigger
-    // You can also ask the user which one they prefer, but Telegram/WhatsApp is best
-    const telegramUrl = `https://t.me/share/url?url=https://maps.apple.com/?q=49.266706,23.216516&text=${encodedMessage}`;
-    const waUrl = `https://wa.me/380982380098?text=${encodedMessage}`;
-    const phoneFallback = `tel:0982380098`;
-
-    // We can open a beautiful confirmation modal or directly redirect to WhatsApp (since it is the most popular for business chat)
-    window.open(waUrl, '_blank');
-  });
-
-  // Run initial calculation
-  calculatePrice();
+  // Pricing calculator removed. Direct links handled in HTML.
 });

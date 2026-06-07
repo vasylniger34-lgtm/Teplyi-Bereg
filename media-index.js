@@ -72,12 +72,12 @@ export const mediaIndex = {
   "photo_69_2026-06-06_19-46-15.jpg"
 ],
   videos: [
-  "IMG_4382.MOV",
-  "IMG_4541.MOV",
-  "IMG_4542.MOV",
-  "IMG_4563.MOV",
-  "IMG_4564.MOV",
-  "IMG_4565.MOV",
-  "IMG_4590.MOV"
+  "IMG_4382.mp4",
+  "IMG_4541.mp4",
+  "IMG_4542.mp4",
+  "IMG_4563.mp4",
+  "IMG_4564.mp4",
+  "IMG_4565.mp4",
+  "IMG_4590.mp4"
 ]
 };

@@ -3,3 +3,6 @@ dist/
 .DS_Store
 *.log
 inspect-images.js
+compress-videos.js
+compress-videos-ultra.js
+*.MOV
