@@ -1372,3 +1372,199 @@ li:hover .amenity-list-icon-svg {
     height: 22px;
   }
 }
+
+/* ==========================================================================
+   SITE PRELOADER
+   ========================================================================== */
+#site-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.8s;
+  overflow: hidden;
+}
+
+#site-preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.05);
+}
+
+.preloader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  animation: fadeInPreloader 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.preloader-anim-container {
+  width: 200px;
+  height: 150px;
+  margin-bottom: 25px;
+  position: relative;
+  filter: drop-shadow(0 0 15px rgba(220, 174, 72, 0.15));
+}
+
+.loader-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Steam Animation */
+.steam-line {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  opacity: 0;
+}
+
+.steam-1 {
+  animation: steamRise 2.5s infinite ease-in-out;
+  animation-delay: 0s;
+  transform-origin: 80px 75px;
+}
+
+.steam-2 {
+  animation: steamRise 2.5s infinite ease-in-out;
+  animation-delay: 0.8s;
+  transform-origin: 100px 72px;
+}
+
+.steam-3 {
+  animation: steamRise 2.5s infinite ease-in-out;
+  animation-delay: 0.4s;
+  transform-origin: 120px 75px;
+}
+
+@keyframes steamRise {
+  0% {
+    stroke-dashoffset: 40;
+    opacity: 0;
+    transform: translateY(2px) scaleX(0.85);
+  }
+  15% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.3;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+    transform: translateY(-15px) scaleX(1.15);
+  }
+}
+
+/* Brand Details */
+.preloader-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.preloader-emblem {
+  width: 44px;
+  height: 52px;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 8px rgba(220, 174, 72, 0.25));
+  animation: emblemPulse 2s infinite ease-in-out;
+}
+
+.preloader-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, var(--color-text), #fff, var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.preloader-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Progress Bar & Percent */
+.preloader-progress-container {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.preloader-progress-bar {
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.preloader-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+  box-shadow: 0 0 8px var(--color-accent);
+  transition: width 0.1s linear;
+}
+
+.preloader-percentage {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+}
+
+@keyframes emblemPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(220, 174, 72, 0.25));
+  }
+  50% {
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 16px rgba(220, 174, 72, 0.5));
+  }
+}
+
+@keyframes fadeInPreloader {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

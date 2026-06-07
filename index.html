@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Tags -->
-  <title>Комплекс відпочинку «Теплий Берег» — Гарячий Чан у селі Бистриця-Гірська</title>
+  <title>«Теплий Берег» — Гарячий чан у будиночку з мангалом та зручностями в Карпатах</title>
   <meta name="description" content="Затишний відпочинок у гарячому чавунному чані на дровах «Теплий Берег». Село Бистриця-Гірська, Львівська область. Кришталево чиста гірська джерельна вода, гідромасаж, затишна альтанка та неймовірні краєвиди Карпат. Бронюйте: 0982380098.">
   <meta name="keywords" content="теплий берег, чан теплий берег, чан бистриця, відпочинок карпати, чан на дровах, бистриця-гірська чани, зняти чан східниця">
   <meta name="author" content="Теплий Берег">
@@ -25,7 +25,150 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="overflow: hidden;">
+
+  <!-- Preloader Screen -->
+  <div id="site-preloader">
+    <div class="preloader-wrapper">
+      <!-- Custom Animated SVG of Gazebo + Hot Tub + People -->
+      <div class="preloader-anim-container">
+        <svg class="loader-svg" viewBox="0 0 200 150" width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gold-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#1a3827" />
+              <stop offset="60%" stop-color="#dcae48" />
+              <stop offset="100%" stop-color="#fcd57a" />
+            </linearGradient>
+            <clipPath id="fill-clip">
+              <rect id="clip-rect" x="0" y="150" width="200" height="0" />
+            </clipPath>
+          </defs>
+
+          <!-- Group 1: Background Outlines (Subtle grey) -->
+          <g stroke="#2a3d31" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- Gazebo Roof -->
+            <path d="M20 50 L100 25 L180 50" />
+            <path d="M25 50 L100 29 L175 50" />
+            <!-- Gazebo Pillars -->
+            <line x1="35" y1="50" x2="35" y2="120" />
+            <line x1="165" y1="50" x2="165" y2="120" />
+            <line x1="75" y1="37" x2="75" y2="85" />
+            <line x1="125" y1="37" x2="125" y2="85" />
+            <!-- Base Platform -->
+            <path d="M15 120 L185 120" />
+            
+            <!-- Hot Tub / Chan outline -->
+            <ellipse cx="100" cy="95" rx="55" ry="15" />
+            <path d="M45 95 L48 118 C48 122, 152 122, 152 118 L155 95" />
+            <line x1="70" y1="103" x2="72" y2="120" />
+            <line x1="100" y1="110" x2="100" y2="122" />
+            <line x1="130" y1="103" x2="128" y2="120" />
+
+            <!-- People outlines -->
+            <path d="M70 90 C70 82, 78 82, 78 90" />
+            <path d="M60 95 C62 90, 68 90, 72 94" />
+            <path d="M115 88 C115 80, 123 80, 123 88" />
+            <path d="M108 94 C110 90, 114 90, 117 93" />
+            <path d="M121 93 C124 90, 128 90, 130 94" />
+          </g>
+
+          <!-- Group 2: Animated Steam (always active) -->
+          <g stroke="var(--color-text-muted)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.6">
+            <path class="steam-line steam-1" d="M80 75 Q75 65 82 55 T78 35" />
+            <path class="steam-line steam-2" d="M100 72 Q105 60 98 50 T102 30" />
+            <path class="steam-line steam-3" d="M120 75 Q115 65 122 55 T118 35" />
+          </g>
+
+          <!-- Group 3: Filled state (Gold/Green Gradient, clipped by progress rect) -->
+          <g clip-path="url(#fill-clip)">
+            <g stroke="url(#gold-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+              <path d="M20 50 L100 25 L180 50" />
+              <path d="M25 50 L100 29 L175 50" />
+              <line x1="35" y1="50" x2="35" y2="120" />
+              <line x1="165" y1="50" x2="165" y2="120" />
+              <line x1="75" y1="37" x2="75" y2="85" />
+              <line x1="125" y1="37" x2="125" y2="85" />
+              <path d="M15 120 L185 120" />
+              
+              <ellipse cx="100" cy="95" rx="55" ry="15" />
+              <path d="M45 95 L48 118 C48 122, 152 122, 152 118 L155 95" />
+              <line x1="70" y1="103" x2="72" y2="120" />
+              <line x1="100" y1="110" x2="100" y2="122" />
+              <line x1="130" y1="103" x2="128" y2="120" />
+
+              <path d="M70 90 C70 82, 78 82, 78 90" fill="url(#gold-grad)" />
+              <path d="M60 95 C62 90, 68 90, 72 94" />
+              <path d="M115 88 C115 80, 123 80, 123 88" fill="url(#gold-grad)" />
+              <path d="M108 94 C110 90, 114 90, 117 93" />
+              <path d="M121 93 C124 90, 128 90, 130 94" />
+            </g>
+            <ellipse cx="100" cy="95" rx="54" ry="14" fill="url(#gold-grad)" opacity="0.35" />
+          </g>
+        </svg>
+      </div>
+      
+      <!-- Logo and Brand Info -->
+      <div class="preloader-brand">
+        <svg class="preloader-emblem" viewBox="0 0 100 120" fill="none">
+          <rect x="44" y="5" width="12" height="15" rx="6" fill="currentColor" />
+          <path d="M50 115 C20 115 10 90 10 65 C10 40 35 25 45 20 L50 20 L55 20 C65 25 90 40 90 65 C90 90 80 115 50 115 Z M50 100 C70 100 76 80 76 65 C76 50 60 38 50 33 C40 38 24 50 24 65 C24 80 30 100 50 100 Z" fill="currentColor" />
+        </svg>
+        <h2 class="preloader-title">Теплий Берег</h2>
+        <p class="preloader-subtitle">Завантаження атмосфери відпочинку...</p>
+      </div>
+      
+      <!-- Progress indicators -->
+      <div class="preloader-progress-container">
+        <div class="preloader-progress-bar">
+          <div class="preloader-progress-fill" id="preloader-fill"></div>
+        </div>
+        <div class="preloader-percentage" id="preloader-percent">0%</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Preloader script
+    document.addEventListener('DOMContentLoaded', () => {
+      const loader = document.getElementById('site-preloader');
+      const clipRect = document.getElementById('clip-rect');
+      const percentText = document.getElementById('preloader-percent');
+      const progressFill = document.getElementById('preloader-fill');
+      
+      let progress = 0;
+      const duration = 2500; // 2.5s loading animation time
+      const intervalTime = 20;
+      const step = (100 / (duration / intervalTime));
+      
+      const loadingInterval = setInterval(() => {
+        progress += step;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(loadingInterval);
+          
+          percentText.textContent = '100%';
+          progressFill.style.width = '100%';
+          clipRect.setAttribute('y', '0');
+          clipRect.setAttribute('height', '150');
+          
+          setTimeout(() => {
+            loader.classList.add('fade-out');
+            document.body.style.overflow = ''; // Unlock scrolling
+          }, 350);
+        } else {
+          const roundedProgress = Math.floor(progress);
+          percentText.textContent = roundedProgress + '%';
+          progressFill.style.width = roundedProgress + '%';
+          
+          // Animate the SVG clipPath fill from bottom (y=150) to top (y=0)
+          const yVal = 150 - (150 * (roundedProgress / 100));
+          const heightVal = 150 * (roundedProgress / 100);
+          clipRect.setAttribute('y', yVal.toString());
+          clipRect.setAttribute('height', heightVal.toString());
+        }
+      }, intervalTime);
+    });
+  </script>
 
   <!-- Header & Navigation -->
   <header id="site-header">
@@ -71,7 +214,7 @@
     <div class="hero-overlay"></div>
     
     <div class="hero-content">
-      <div class="hero-tagline">Оздоровчий комплекс в Карпатах</div>
+      <div class="hero-tagline">Гарячий чан у будиночку з мангалом та всіма зручностями</div>
       <h1><span>Теплий Берег</span></h1>
       <p>Преміальний відпочинок у гарячому чавунному чані з джерельною водою та аеромасажем на схилі мальовничих гір у селі Бистриця-Гірська.</p>
       
@@ -152,7 +295,7 @@
       <div class="about-text">
         <span class="section-tag">Про відпочинок</span>
         <h2>Відчуйте справжнє тепло карпатської природи</h2>
-        <p>Паріння у чавунному чані комплексу «Теплий Берег» — це ритуал здоров'я та глибокої релаксації. Вода з гірського джерела підігрівається на дровах до приємних 38–42°C. Весь наш комплекс збудований <strong>власноруч з екологічного карпатського дерева</strong>, створюючи неповторне відчуття природного тепла та аромат лісу.</p>
+        <p>Паріння у чавунному чані «Теплого Берега» — це ритуал релаксації та відновлення сил. Вода з гірського джерела підігрівається на дровах до приємних 38–42°C. Усе на нашій території збудовано <strong>власноруч з екологічного карпатського дерева</strong>, створюючи неповторне відчуття природного тепла та аромат лісу.</p>
         
         <p style="margin-top: 15px;">Наш чан зсередини оздоблений натуральним деревом та обладнаний вбудованою системою аеромасажу. Ніжні бульбашки створюють ефект природного джакузі серед Карпатського лісу.</p>
         
@@ -215,7 +358,7 @@
       
       <!-- Swapped image sizes to focus on photo_13 -->
       <div class="about-image-stack">
-        <img class="about-img-main" src="photo_13_2026-06-06_19-46-15.jpg" alt="Мальовничий краєвид альтанки та погребу комплексу Теплий Берег">
+        <img class="about-img-main" src="photo_13_2026-06-06_19-46-15.jpg" alt="Мальовничий краєвид альтанки та погребу на території Теплого Берега">
         <img class="about-img-sub" src="photo_21_2026-06-06_19-46-15.jpg" alt="Гарячий чан на дровах з підсвіткою на території">
       </div>
     </div>
@@ -226,7 +369,7 @@
     <div class="section-header">
       <span class="section-tag">Що на вас чекає</span>
       <h2>Створено для затишного релаксу</h2>
-      <p>Ми подбали про те, щоб ваш відпочинок був комфортним та естетичним. Весь комплекс відпочинку та кожна деталь зроблені власноруч з дерева.</p>
+      <p>Ми подбали про те, щоб ваш відпочинок був комфортним та естетичним. Увесь наш простір та кожна деталь зроблені власноруч з дерева.</p>
     </div>
     
     <div class="about-container" style="direction: rtl;">
@@ -266,7 +409,7 @@
               <svg class="amenity-list-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 10a7 7 0 0 0 14 0H5Z"/>
                 <path d="M12 17v4M8 21h8"/>
-                <path d="M9 5c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5ZM17 5c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5ZM13 3c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5Z"/>
+                <path d="M9 5c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5ZM17 5c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5ZM13 3c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5ZM17 5c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5ZM13 3c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5Z"/>
               </svg>
             </div>
             <div><strong>Мангальна зона:</strong> Простір для приготування страв на вогні (цегляний мангал, шампури та сітка в наявності).</div>
@@ -275,7 +418,7 @@
       </div>
       
       <div class="about-image-stack">
-        <img class="about-img-main" src="photo_10_2026-06-06_19-46-15.jpg" alt="Інтер'єр альтанки комплексу відпочинку Теплий Берег">
+        <img class="about-img-main" src="photo_10_2026-06-06_19-46-15.jpg" alt="Інтер'єр затишної альтанки на Теплому Березі">
         <img class="about-img-sub" src="photo_31_2026-06-06_19-46-15.jpg" alt="Декоративні деталі та різьблений дерев'яний герб" style="left: auto; right: -20px;">
       </div>
     </div>
@@ -288,7 +431,7 @@
     <div class="scenery-content">
       <span class="section-tag">Наш краєвид</span>
       <h2>Магія карпатського спокою</h2>
-      <p>Комплекс «Теплий Берег» розташований на відокремленому схилі села Бистриця-Гірська. Тут гори торкаються хмар, а свіжий вітер приносить аромат хвої та свободи.</p>
+      <p>Чан «Теплий Берег» розташований на відокремленому схилі села Бистриця-Гірська. Тут гори торкаються хмар, а свіжий вітер приносить аромат хвої та свободи.</p>
     </div>
   </section>
 
@@ -297,7 +440,7 @@
     <div class="section-header">
       <span class="section-tag">Атмосфера в деталях</span>
       <h2>Наша фото- та відеогалерея</h2>
-      <p>Кожен кадр знятий на території нашого комплексу. Жодних стокових фото — тільки справжня краса Теплого Берега.</p>
+      <p>Кожен кадр знятий на нашій території. Жодних стокових фото — тільки справжня краса Теплого Берега.</p>
     </div>
     
     <div class="gallery-filters">
@@ -322,7 +465,7 @@
     <div class="section-header">
       <span class="section-tag">Як доїхати</span>
       <h2>Ми на карті</h2>
-      <p>Комплекс «Теплий Берег» знаходиться у тихому, віддаленому від галасу куточку. До нас веде комфортна гірська дорога.</p>
+      <p>Чан «Теплий Берег» знаходиться у тихому, віддаленому від галасу куточку. До нас веде комфортна гірська дорога.</p>
     </div>
     
     <div class="map-wrapper">
@@ -353,7 +496,7 @@
       <div class="contacts-text">
         <span class="section-tag">Забронювати відпочинок</span>
         <h3>Плануєте візит? Зв'яжіться з нами!</h3>
-        <p>Чан розпалюється індивідуально під кожне замовлення. Нагрівання чистої джерельної води до ідеальної температури займає близько 3–4 годин. Будь ласка, бронюйте час заздалегідь!</p>
+        <p>Чан розпалюється індивідуально под кожне замовлення. Нагрівання чистої джерельної води до ідеальної температури займає близько 3–4 годин. Будь ласка, бронюйте час заздалегідь!</p>
         
         <div class="contact-info-list">
           <div class="contact-info-item">
@@ -403,7 +546,7 @@
       <div class="booking-form-card">
         <h3>Швидке бронювання</h3>
         <p style="margin-bottom: 25px; text-align: center; color: var(--color-text-muted);">
-          Зв'яжіться з нами в один клік у будь-якому зручному месенджері, і ми підберемо для вас найкращий час.
+          Зв'яжіться з нами в один клік у будь-котрому зручному месенджері, і ми підберемо для вас найкращий час.
         </p>
         <div style="display: flex; flex-direction: column; gap: 15px;">
           <a href="tel:0982380098" class="btn-primary" style="width: 100%; justify-content: center; padding: 16px 28px;" id="direct-call-cta">
@@ -426,7 +569,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Комплекс відпочинку <span>«Теплий Берег»</span>. с. Бистриця-Гірська, Львівська обл. Всі права захищені.</p>
+    <p>&copy; 2026 Чан відпочинку <span>«Теплий Берег»</span>. с. Бистриця-Гірська, Львівська обл. Всі права захищені.</p>
   </footer>
 
   <!-- Floating Booking Phone Button -->

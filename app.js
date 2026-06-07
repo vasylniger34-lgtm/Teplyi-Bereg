@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   L.marker(coordinates, { icon: customIcon }).addTo(map)
-    .bindPopup(`<strong style="color:#080d0a;">Комплекс «Теплий Берег»</strong><br><span style="color:#333;">с. Бистриця-Гірська</span>`, {
+    .bindPopup(`<strong style="color:#080d0a;">«Теплий Берег»</strong><br><span style="color:#333;">с. Бистриця-Гірська</span>`, {
       closeButton: false,
       offset: L.point(0, -10)
     })
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mediaIndex && mediaIndex.videos) {
     mediaIndex.videos.forEach(video => {
       let title = 'Затишне вирування чану';
-      let subtitle = 'Відеоогляд комплексу';
+      let subtitle = 'Відеоогляд простору';
       
       if (video.includes('4382')) {
         title = 'Вечірній чан з аеромасажем';
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         subtitle = 'Розпалювання дров під чавунною чашею';
       } else if (video.includes('4590')) {
         title = 'Екскурсія територією';
-        subtitle = 'Повний огляд простору комплексу відпочинку';
+        subtitle = 'Повний огляд простору відпочинку';
       }
 
       allMediaItems.push({
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let subtitle = 'Чан та відпочинок';
 
       if (photoNum === 13) {
-        title = 'Панорама комплексу';
+        title = 'Панорама території';
         subtitle = 'Затишна альтанка та кам\'яний льох на схилі';
       } else if (photoNum === 10 || photoNum === 11 || photoNum === 12) {
         title = 'Альтанка зсередини';
@@ -197,10 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
         subtitle = 'Оздоблення чану натуральним деревом та аеромасаж';
       } else if (photoNum === 31) {
         title = 'Різьблені дерев\'яні деталі';
-        subtitle = 'Герб комплексу «Теплий Берег» ручної роботи';
+        subtitle = 'Герб «Теплого Берега» ручної роботи';
       } else if (photoNum >= 1 && photoNum <= 9) {
         title = 'Чан та зона паріння';
-        subtitle = 'Чаша нашого оздоровчого чану з джерельною водою';
+        subtitle = 'Чаша нашого чану з джерельною водою';
       } else if (photoNum >= 14 && photoNum <= 20) {
         title = 'Дерев\'яна тераса';
         subtitle = 'Зручний простір для релаксу між сеансами паріння';
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
         subtitle = 'Відро-водоспад з чистою гірською водою';
       } else if (photoNum >= 32 && photoNum <= 39) {
         title = 'Вечірня ілюмінація';
-        subtitle = 'Романтичне підсвічування комплексу в сутінках';
+        subtitle = 'Романтичне підсвічування в сутінках';
       } else if (photoNum >= 40 && photoNum <= 50) {
         title = 'Краса навколишніх гір';
         subtitle = 'Мальовничі краєвиди Бистриці-Гірської';
