@@ -1,0 +1,15 @@
+{
+  "name": "u-vasylya-chan",
+  "version": "1.0.0",
+  "description": "Cozy Carpathian hot tub website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "postbuild": "node copy-assets.js",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}

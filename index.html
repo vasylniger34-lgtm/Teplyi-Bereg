@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Tags -->
+  <title>Комплекс відпочинку «Теплий Берег» — Гарячий Чан у селі Бистриця-Гірська</title>
+  <meta name="description" content="Затишний відпочинок у гарячому чавунному чані на дровах «Теплий Берег». Село Бистриця-Гірська, Львівська область. Кришталево чиста гірська джерельна вода, гідромасаж, затишна альтанка та неймовірні краєвиди Карпат. Бронюйте: 0982380098.">
+  <meta name="keywords" content="теплий берег, чан теплий берег, чан бистриця, відпочинок карпати, чан на дровах, бистриця-гірська чани, зняти чан східниця">
+  <meta name="author" content="Теплий Берег">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Теплий Берег — Карпатський чан та відпочинок у селі Бистриця-Гірська">
+  <meta property="og:description" content="Чавунний чан на дровах із гірською джерельною водою та аеромасажем. Затишна тераса, альтанка, зона відпочинку. Бронюйте за телефоном: +380982380098.">
+  <meta property="og:image" content="photo_13_2026-06-06_19-46-15.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header id="site-header">
+    <a href="#" class="logo" id="logo-link">
+      <!-- Custom Emblem based on the wooden droplet sculpture from user photo -->
+      <svg class="logo-icon" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="44" y="5" width="12" height="15" rx="6" fill="currentColor" />
+        <path d="M50 115 C20 115 10 90 10 65 C10 40 35 25 45 20 L50 20 L55 20 C65 25 90 40 90 65 C90 90 80 115 50 115 Z M50 100 C70 100 76 80 76 65 C76 50 60 38 50 33 C40 38 24 50 24 65 C24 80 30 100 50 100 Z" fill="currentColor" />
+      </svg>
+      Теплий <span>Берег</span>
+    </a>
+    
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#about" class="nav-link" id="nav-about">Про відпочинок</a></li>
+        <li><a href="#amenities" class="nav-link" id="nav-amenities">Зручності</a></li>
+        <li><a href="#gallery" class="nav-link" id="nav-gallery">Галерея</a></li>
+        <li><a href="#location" class="nav-link" id="nav-location">Карта</a></li>
+        <li><a href="#booking" class="nav-link" id="nav-booking">Бронювання</a></li>
+      </ul>
+    </nav>
+    
+    <a href="tel:0982380098" class="nav-phone" id="header-phone-link">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      098 238 00 98
+    </a>
+    
+    <button class="burger-menu" id="mobile-burger-btn" aria-label="Відкрити меню">
+      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Hero Banner with Video BG -->
+  <section class="hero" id="hero-section">
+    <video class="hero-video-bg" autoplay muted loop playsinline poster="photo_21_2026-06-06_19-46-15.jpg">
+      <source src="IMG_4382.MOV" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+      <div class="hero-tagline">Оздоровчий комплекс в Карпатах</div>
+      <h1><span>Теплий Берег</span></h1>
+      <p>Преміальний відпочинок у гарячому чавунному чані з джерельною водою та аеромасажем на схилі мальовничих гір у селі Бистриця-Гірська.</p>
+      
+      <div class="hero-ctas">
+        <a href="#booking" class="btn-primary" id="hero-book-btn">
+          Забронювати відпочинок
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#gallery" class="btn-secondary" id="hero-gallery-btn">Дивитись фото</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Info Bento Cards -->
+  <section style="padding-top: 0; padding-bottom: 20px;">
+    <div class="bento-info">
+      
+      <div class="bento-card" id="bento-loc">
+        <div class="bento-card-icon">
+          <svg class="bento-card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Локація</h3>
+          <p>с. Бистриця-Гірська, Дрогобицький р-н, Львівська область</p>
+        </div>
+      </div>
+      
+      <div class="bento-card" id="bento-phone">
+        <div class="bento-card-icon">
+          <svg class="bento-card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Бронювання</h3>
+          <p>Телефонуйте напряму: <strong>098 238 00 98</strong> для замовлення</p>
+        </div>
+      </div>
+      
+      <div class="bento-card" id="bento-water">
+        <div class="bento-card-icon">
+          <svg class="bento-card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13S5 10.7 5 15a7 7 0 0 0 7 7z"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Гірська вода</h3>
+          <p>Наповнюємо чан виключно кришталево чистою водою з природного джерела</p>
+        </div>
+      </div>
+      
+      <div class="bento-card" id="bento-capacity">
+        <div class="bento-card-icon">
+          <svg class="bento-card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Місткість</h3>
+          <p>Великий та глибокий чан комфортно вміщує компанію до 6–8 осіб</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- About / Experience Section -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <span class="section-tag">Про відпочинок</span>
+        <h2>Відчуйте справжнє тепло карпатської природи</h2>
+        <p>Паріння у чавунному чані комплексу «Теплий Берег» — це ритуал здоров'я та глибокої релаксації. Вода з гірського джерела підігрівається на дровах до приємних 38–42°C. Контраст гарячої води та свіжого гірського повітря запускає процеси омолодження та очищення організму.</p>
+        
+        <p style="margin-top: 15px;">Наш чан зсередини оздоблений натуральним деревом та обладнаний вбудованою системою аеромасажу. Ніжні бульбашки створюють ефект природного джакузі серед Карпатського лісу.</p>
+        
+        <div class="about-features">
+          <div class="about-feature-item">
+            <div class="about-feature-icon">
+              <svg class="about-feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+              </svg>
+            </div>
+            <div class="about-feature-text">
+              <h4>Підігрів на дровах</h4>
+              <p>М'яке тепло від справжнього вогню підтримує ідеальну температуру води.</p>
+            </div>
+          </div>
+          
+          <div class="about-feature-item">
+            <div class="about-feature-icon">
+              <svg class="about-feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 12a4 4 0 0 1 8 0"/>
+                <circle cx="12" cy="7" r="1"/>
+                <circle cx="8" cy="15" r="1.5"/>
+                <circle cx="16" cy="15" r="1.5"/>
+              </svg>
+            </div>
+            <div class="about-feature-text">
+              <h4>Аеромасаж</h4>
+              <p>Система повітряного масажу розслабляє м'язи та знімає втому.</p>
+            </div>
+          </div>
+          
+          <div class="about-feature-item">
+            <div class="about-feature-icon">
+              <svg class="about-feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L3 9h3v5H4l8 7 8-7h-2v-5h3L12 2z"/>
+                <path d="M12 18v4"/>
+              </svg>
+            </div>
+            <div class="about-feature-text">
+              <h4>Дика природа</h4>
+              <p>Тиха затишна локація на гірському схилі, подалі від міського шуму.</p>
+            </div>
+          </div>
+          
+          <div class="about-feature-item">
+            <div class="about-feature-icon">
+              <svg class="about-feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <div class="about-feature-text">
+              <h4>Затишна альтанка</h4>
+              <p>Крита тераса зі столом, лавками та освітленням для приємного відпочинку.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Swapped image sizes to focus on photo_13 -->
+      <div class="about-image-stack">
+        <img class="about-img-main" src="photo_13_2026-06-06_19-46-15.jpg" alt="Мальовничий краєвид альтанки та погребу комплексу Теплий Берег">
+        <img class="about-img-sub" src="photo_21_2026-06-06_19-46-15.jpg" alt="Гарячий чан на дровах з підсвіткою на території">
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities showcase (Additional Details) -->
+  <section id="amenities" style="background-color: #0b120d;">
+    <div class="section-header">
+      <span class="section-tag">Що на вас чекає</span>
+      <h2>Створено для затишного релаксу</h2>
+      <p>Ми подбали про те, щоб ваш відпочинок був комфортним та естетичним. Кожна деталь комплексу виконана з натуральних матеріалів.</p>
+    </div>
+    
+    <div class="about-container" style="direction: rtl;">
+      <div class="about-text" style="direction: ltr;">
+        <p>Наш простір огороджений від сторонніх очей та прикрашений дерев'яним декором ручної роботи. Вечірні вогні та гірлянди створюють особливу камерну атмосферу затишку.</p>
+        
+        <ul style="list-style: none; margin-top: 30px; display: flex; flex-direction: column; gap: 20px;">
+          <li style="display: flex; gap: 15px; align-items: center;">
+            <div class="amenity-list-icon">
+              <svg class="amenity-list-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                <path d="M19 3v4M21 5h-4"/>
+              </svg>
+            </div>
+            <div><strong>Вечірня романтика:</strong> Чарівне неонове LED-підсвічування стін та мерехтливі гірлянди на терасі.</div>
+          </li>
+          <li style="display: flex; gap: 15px; align-items: center;">
+            <div class="amenity-list-icon">
+              <svg class="amenity-list-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 20a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h2Z"/>
+                <path d="M12 20a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2Z"/>
+                <path d="M4 20a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2Z"/>
+              </svg>
+            </div>
+            <div><strong>Дерев'яний інтер'єр:</strong> Обробка якісним натуральним деревом, хвойний аромат та природний колорит.</div>
+          </li>
+          <li style="display: flex; gap: 15px; align-items: center;">
+            <div class="amenity-list-icon">
+              <svg class="amenity-list-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12h20M12 2v20M20 8l-4 4 4 4M4 8l4 4-4 4M8 4l4 4 4-4M8 20l4-4 4 4"/>
+              </svg>
+            </div>
+            <div><strong>Контрастне обливання:</strong> Поруч є дерев'яне відро-водоспад з чистою холодною водою для загартовування.</div>
+          </li>
+          <li style="display: flex; gap: 15px; align-items: center;">
+            <div class="amenity-list-icon">
+              <svg class="amenity-list-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 10a7 7 0 0 0 14 0H5Z"/>
+                <path d="M12 17v4M8 21h8"/>
+                <path d="M9 5c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5ZM17 5c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5ZM13 3c0 1.5-1 2.5-1 2.5s-1-1-1-2.5 1-2.5 1-2.5 1 1 1 2.5Z"/>
+              </svg>
+            </div>
+            <div><strong>Мангальна зона:</strong> Простір для приготування страв на вогні (цегляний мангал, шампури та сітка в наявності).</div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="about-image-stack">
+        <img class="about-img-main" src="photo_10_2026-06-06_19-46-15.jpg" alt="Інтер'єр альтанки комплексу відпочинку Теплий Берег">
+        <img class="about-img-sub" src="photo_31_2026-06-06_19-46-15.jpg" alt="Декоративні деталі та різьблений дерев'яний герб" style="left: auto; right: -20px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Scenery Highlight Section for Photo 13 -->
+  <section class="scenery-highlight-section">
+    <div class="scenery-bg-image"></div>
+    <div class="scenery-overlay"></div>
+    <div class="scenery-content">
+      <span class="section-tag">Наш краєвид</span>
+      <h2>Магія карпатського спокою</h2>
+      <p>Комплекс «Теплий Берег» розташований на відокремленому схилі села Бистриця-Гірська. Тут гори торкаються хмар, а свіжий вітер приносить аромат хвої та свободи.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="section-header">
+      <span class="section-tag">Атмосфера в деталях</span>
+      <h2>Наша фото- та відеогалерея</h2>
+      <p>Кожен кадр знятий на території нашого комплексу. Жодних стокових фото — тільки справжня краса Теплого Берега.</p>
+    </div>
+    
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">Всі кадри</button>
+      <button class="filter-btn" data-filter="chan">Чан та тераса</button>
+      <button class="filter-btn" data-filter="nature">Територія та краєвиди</button>
+      <button class="filter-btn" data-filter="video">Відео</button>
+    </div>
+    
+    <!-- Gallery Grid (Populated dynamically) -->
+    <div class="gallery-grid" id="photo-gallery-grid">
+      <!-- Media files will load here via JavaScript -->
+    </div>
+    
+    <div class="gallery-actions">
+      <button class="btn-secondary" id="load-more-media-btn">Показати більше фото</button>
+    </div>
+  </section>
+
+  <!-- Map / Location Section -->
+  <section id="location" class="map-section">
+    <div class="section-header">
+      <span class="section-tag">Як доїхати</span>
+      <h2>Ми на карті</h2>
+      <p>Комплекс «Теплий Берег» знаходиться у тихому, віддаленому від галасу куточку. До нас веде комфортна гірська дорога.</p>
+    </div>
+    
+    <div class="map-wrapper">
+      <!-- Map Container -->
+      <div id="leaflet-map"></div>
+      
+      <!-- Overlapping Info Card -->
+      <div class="map-info-card">
+        <h3>Теплий Берег</h3>
+        <p style="margin-bottom: 10px;"><strong>Адреса:</strong><br>вул. Ювілейна, с. Бистриця-Гірська,<br>Дрогобицький р-н, Львівська область</p>
+        <p><strong>Координати:</strong><br>49.266706, 23.216516</p>
+        <div style="display: flex; gap: 10px; flex-direction: column;">
+          <a href="https://maps.apple.com/maps?ll=49.266706440729855,23.216516154830405&q=49.266706440729855,23.216516154830405&t=m" target="_blank" class="btn-primary" style="padding: 10px 18px; font-size: 0.85rem; justify-content: center;" id="open-apple-maps-btn">
+            Відкрити в Apple Maps
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=49.266706440729855,23.216516154830405" target="_blank" class="btn-secondary" style="padding: 10px 18px; font-size: 0.85rem; justify-content: center;" id="open-google-maps-btn">
+            Відкрити в Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking and Cost Calculator -->
+  <section id="booking" class="contacts-section">
+    <div class="contacts-container">
+      
+      <div class="contacts-text">
+        <span class="section-tag">Забронювати відпочинок</span>
+        <h3>Плануєте візит? Зв'яжіться з нами!</h3>
+        <p>Чан розпалюється індивідуально під кожне замовлення. Нагрівання чистої джерельної води до ідеальної температури займає близько 3–4 годин. Будь ласка, бронюйте час заздалегідь!</p>
+        
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px; height:24px;">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div class="contact-info-details">
+              <h4>Телефон для бронювання</h4>
+              <a href="tel:0982380098" id="body-phone-link">098 238 00 98</a>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px; height:24px;">
+                <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="contact-info-details">
+              <h4>Локація</h4>
+              <p>село Бистриця-Гірська, Львівська обл.</p>
+            </div>
+          </div>
+        </div>
+        
+        <p style="font-size: 0.95rem; margin-bottom: 15px; color: var(--color-text-muted);">Або напишіть нам у месенджери:</p>
+        <div class="contact-social-icons">
+          <!-- Telegram -->
+          <a href="https://t.me/+380982380098" target="_blank" class="social-btn" aria-label="Написати у Telegram" id="social-tg-btn">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.62.15-.15 2.7-2.46 2.75-2.68.01-.03.01-.14-.06-.2-.07-.06-.17-.04-.25-.02-.11.02-1.8 1.14-5.06 3.35-.48.33-.91.49-1.3.48-.43-.01-1.25-.24-1.86-.44-.75-.24-1.35-.37-1.3-.78.03-.22.33-.44.89-.67 3.48-1.51 5.8-2.52 6.96-3 .67-.28 1.37-.34 1.82-.33.1.00.32.02.47.1.13.06.22.15.26.27.05.15.03.38.01.46z"/></svg>
+          </a>
+          <!-- Viber -->
+          <a href="viber://chat?number=%2B380982380098" class="social-btn" aria-label="Написати у Viber" id="social-viber-btn">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.57 20.91c-.48-.03-2.12-.7-4-2-1.74-1.23-3.7-3.14-5.07-5.18-1.55-2.31-2.28-4.52-2.3-5a.62.62 0 0 1 .18-.52C6.91 7.74 8 6.55 8.08 6.45c.21-.26.4-.33.56-.33.15 0 .3.05.48.21.31.29 1.48 1.94 1.62 2.14a.7.7 0 0 1 0 .86c-.15.24-.71 1.05-.83 1.22-.16.22-.09.43.05.67a14.78 14.78 0 0 0 3.32 3.6 11.23 11.23 0 0 0 3.73 2.18c.27.11.47.07.63-.12.16-.18.82-.95 1.07-1.31a.7.7 0 0 1 .83-.23c.3.11 2.37 1.15 2.62 1.3s.41.34.41.52c-.01.59-.97 1.83-1.63 2.65a2.53 2.53 0 0 1-1.77 1.05 4.3 4.3 0 0 1-1.2-.18z"/></svg>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/380982380098" target="_blank" class="social-btn" aria-label="Написати у WhatsApp" id="social-wa-btn">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.12c-.24.69-1.24 1.26-1.72 1.33-.42.06-.98.1-2.98-.73-2.56-1.06-4.21-3.67-4.34-3.84-.13-.17-1.04-1.39-1.04-2.65 0-1.26.66-1.88.89-2.14.23-.26.5-.32.66-.32.16 0 .33.01.47.02.15.01.35-.06.55.42.2.49.69 1.68.75 1.8.06.12.1.26.02.43-.08.17-.12.27-.24.4-.12.13-.26.3-.37.4-.12.13-.26.3-.37.4-.12.12-.25.25-.11.49.14.24.62 1.02 1.33 1.65.92.81 1.7 1.06 1.94 1.18.24.12.38.1.52-.06.14-.17.61-.71.77-.95.16-.24.33-.2.55-.12.23.09 1.45.69 1.7.81.25.12.42.18.48.29.06.11.06.63-.18 1.32z"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="booking-form-card">
+        <h3>Розрахувати вартість</h3>
+        
+        <form id="calc-booking-form">
+          <div class="form-group">
+            <label for="hours-select">Кількість годин парення</label>
+            <select id="hours-select">
+              <option value="2" selected>2 години (Мінімальне замовлення)</option>
+              <option value="3">3 години</option>
+              <option value="4">4 години</option>
+              <option value="5">5 годин</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="people-select">Кількість осіб</label>
+            <select id="people-select">
+              <option value="4" selected>До 4 осіб</option>
+              <option value="6">5–6 осіб</option>
+              <option value="8">7–8 осіб</option>
+            </select>
+          </div>
+          
+          <div class="booking-calc">
+            <span class="booking-calc-label">Орієнтовна вартість:</span>
+            <span class="booking-calc-price" id="calc-price-display">2000 ₴</span>
+          </div>
+          
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;" id="form-submit-btn">
+            Замовити бронювання
+          </button>
+        </form>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Чан <span>«У Василя»</span>. с. Бистриця-Гірська, Львівська обл. Всі права захищені.</p>
+  </footer>
+
+  <!-- Floating Booking Phone Button -->
+  <a href="tel:0982380098" class="floating-call" aria-label="Подзвонити для бронювання" id="floating-call-btn">
+    <svg viewBox="0 0 24 24">
+      <path d="M6.62,10.79C8.06,13.62,10.38,15.94,13.21,17.38L15.41,15.18C15.69,14.9,16.08,14.82,16.43,14.93C17.55,15.3,18.75,15.5,20,15.5A1,1,0,0,1,21,16.5V20A1,1,0,0,1,20,21A17,17,0,0,1,3,4A1,1,0,0,1,4,3H7.5A1,1,0,0,1,8.5,4C8.5,5.25,8.7,6.45,9.07,7.57C9.18,7.92,9.1,8.31,8.82,8.59L6.62,10.79Z"/>
+    </svg>
+  </a>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox-modal">
+    <button class="lightbox-close" id="lightbox-close-btn" aria-label="Закрити">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev-btn" aria-label="Попереднє">&lsaquo;</button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next-btn" aria-label="Наступне">&rsaquo;</button>
+    
+    <div class="lightbox-content" id="lightbox-media-container">
+      <!-- Image or Video tag will be loaded here dynamically -->
+    </div>
+    <div class="lightbox-caption" id="lightbox-caption-text"></div>
+  </div>
+
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+
+  
+  <!-- Application JS -->
+  <script src="app.js" type="module"></script>
+</body>
+</html>

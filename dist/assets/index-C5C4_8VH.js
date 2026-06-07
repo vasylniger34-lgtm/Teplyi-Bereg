@@ -1,0 +1,36 @@
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))u(n);new MutationObserver(n=>{for(const i of n)if(i.type==="childList")for(const g of i.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&u(g)}).observe(document,{childList:!0,subtree:!0});function m(n){const i={};return n.integrity&&(i.integrity=n.integrity),n.referrerPolicy&&(i.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?i.credentials="include":n.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function u(n){if(n.ep)return;n.ep=!0;const i=m(n);fetch(n.href,i)}})();document.addEventListener("DOMContentLoaded",()=>{const x=document.getElementById("site-header"),a=document.querySelectorAll(".nav-link");window.addEventListener("scroll",()=>{window.scrollY>50?x.classList.add("scrolled"):x.classList.remove("scrolled");let e="";document.querySelectorAll("section[id]").forEach(t=>{const s=t.offsetTop;t.clientHeight,window.scrollY>=s-150&&(e=t.getAttribute("id"))}),a.forEach(t=>{t.classList.remove("active"),t.getAttribute("href").substring(1)===e&&t.classList.add("active")})});const m=document.getElementById("mobile-burger-btn"),u=document.getElementById("main-nav");m.addEventListener("click",()=>{u.classList.toggle("active"),u.classList.contains("active")?m.innerHTML=`
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+        </svg>
+      `:m.innerHTML=`
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/>
+        </svg>
+      `}),a.forEach(e=>{e.addEventListener("click",()=>{u.classList.remove("active"),m.innerHTML=`
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/>
+        </svg>
+      `})});const n=[49.266706,23.216516],i=L.map("leaflet-map",{center:n,zoom:14,zoomControl:!1,scrollWheelZoom:!1});L.control.zoom({position:"bottomright"}).addTo(i),L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',subdomains:"abcd",maxZoom:20}).addTo(i);const g=L.divIcon({className:"custom-map-marker",html:'<div class="marker-pulse"></div><div class="marker-pin"></div>',iconSize:[30,30],iconAnchor:[0,0]});L.marker(n,{icon:g}).addTo(i).bindPopup('<strong style="color:#080d0a;">Чан «У Василя»</strong><br><span style="color:#333;">с. Бистриця-Гірська</span>',{closeButton:!1,offset:L.point(0,-10)}).openPopup(),setTimeout(()=>{i.invalidateSize()},500);const E=document.getElementById("photo-gallery-grid"),v=document.getElementById("load-more-media-btn"),C=document.querySelectorAll(".filter-btn"),N=[4,5,6,7,8,9,13,14,15,16,17,18,19,20,31,32,33,34,35,36,37,38,39],p=[];window.mediaIndex&&window.mediaIndex.videos&&window.mediaIndex.videos.forEach(e=>{p.push({type:"video",src:e,category:"video",title:"Затишне вирування чану",subtitle:"Відео"})}),window.mediaIndex&&window.mediaIndex.photos&&window.mediaIndex.photos.forEach(e=>{const o=e.match(/photo_(\d+)_/),t=o?parseInt(o[1],10):0,s=N.includes(t),d=s?"nature":"chan";let l="Чан «У Василя»";s?l="Мальовничі краєвиди":t===10||t===11||t===12?l="Інтер'єр та підсвітка":(t===21||t===31)&&(l="Територія комплексу"),p.push({type:"image",src:e,category:d,title:l,subtitle:s?"Околиці та природа":"Чан та відпочинок"})}),p.forEach((e,o)=>{o%7===0?e.gridClass="big":o%5===0?e.gridClass="wide":o%4===0?e.gridClass="tall":e.gridClass="normal"});let w="all",h=8;const S=8;let c=[];function $(){w==="all"?c=p:c=p.filter(e=>e.category===w)}function I(){E.innerHTML="";const e=c.slice(0,h);if(e.length===0){E.innerHTML='<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--color-text-muted);">Немає медіафайлів у цій категорії.</div>',v.style.display="none";return}e.forEach((o,t)=>{const s=document.createElement("div");s.className=`gallery-item ${o.gridClass}`,s.dataset.index=t;let d="";if(o.type==="video"?d=`
+          <video src="${o.src}" muted loop playsinline></video>
+          <div class="video-badge">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        `:d=`<img src="${o.src}" alt="${o.title}" loading="lazy">`,s.innerHTML=`
+        ${d}
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <h4>${o.title}</h4>
+            <p>${o.subtitle}</p>
+          </div>
+        </div>
+      `,s.addEventListener("click",()=>{Z(t)}),E.appendChild(s),o.type==="video"){const l=s.querySelector("video");s.addEventListener("mouseenter",()=>{l.play().catch(()=>{})}),s.addEventListener("mouseleave",()=>{l.pause(),l.currentTime=0})}}),h>=c.length?v.style.display="none":v.style.display="inline-flex"}v.addEventListener("click",()=>{h+=S,I()}),C.forEach(e=>{e.addEventListener("click",()=>{C.forEach(o=>o.classList.remove("active")),e.classList.add("active"),w=e.dataset.filter,h=8,$(),I()})}),$(),I();const f=document.getElementById("lightbox-modal"),A=document.getElementById("lightbox-close-btn"),O=document.getElementById("lightbox-prev-btn"),z=document.getElementById("lightbox-next-btn"),y=document.getElementById("lightbox-media-container"),q=document.getElementById("lightbox-caption-text");let r=0;function Z(e){r=e,f.classList.add("active"),B(),document.body.style.overflow="hidden"}function M(){f.classList.remove("active"),y.innerHTML="",document.body.style.overflow=""}function B(){y.innerHTML="";const e=c[r];e&&(e.type==="video"?y.innerHTML=`
+        <video src="${e.src}" controls autoplay loop playsinline style="max-height:80vh; width:100%;"></video>
+      `:y.innerHTML=`
+        <img src="${e.src}" alt="${e.title}">
+      `,q.textContent=`${e.title} — ${e.subtitle}`)}function k(){r>0?r--:r=c.length-1,B()}function P(){r<c.length-1?r++:r=0,B()}A.addEventListener("click",M),O.addEventListener("click",k),z.addEventListener("click",P),f.addEventListener("click",e=>{e.target===f&&M()}),document.addEventListener("keydown",e=>{f.classList.contains("active")&&(e.key==="Escape"?M():e.key==="ArrowLeft"?k():e.key==="ArrowRight"&&P())});const H=document.getElementById("hours-select"),b=document.getElementById("people-select"),V=document.getElementById("calc-price-display"),R=document.getElementById("calc-booking-form");function T(){const e=parseInt(H.value,10),o=parseInt(b.value,10);let t=2e3;return e>2&&(t+=(e-2)*500),o===6?t+=200:o===8&&(t+=400),V.textContent=`${t} ₴`,t}H.addEventListener("change",T),b.addEventListener("change",T),R.addEventListener("submit",e=>{e.preventDefault();const o=H.value,t=b.options[b.selectedIndex].text,s=V.textContent,d=`Доброго дня! Бажаю забронювати чан «У Василя» в селі Бистриця-Гірська. 
+Деталі:
+- Кількість годин парення: ${o} год.
+- Кількість гостей: ${t}
+- Розрахункова вартість: ${s}
+
+Зв'яжіться зі мною, будь ласка, для підтвердження вільного часу.`,_=`https://wa.me/380982380098?text=${encodeURIComponent(d)}`;window.open(_,"_blank")}),T()});
